@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:logisticsapp/screens/get_started.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -13,7 +11,7 @@ class UnboardingScreen extends StatefulWidget {
 }
 
 class _UnboardingScreenState extends State<UnboardingScreen> {
-PageController _controller =PageController();
+final PageController _controller =PageController();
   bool onlastpage = false;
 
   @override
@@ -54,7 +52,7 @@ PageController _controller =PageController();
                 height: 350,
                decoration: const BoxDecoration(
                   image: DecorationImage(
-                  image: AssetImage('assets/images/pics1.png'),
+                  image: AssetImage('assets/images/gif1.gif'),
                    fit: BoxFit.contain )),
                    ),
                    Container(
@@ -77,7 +75,7 @@ PageController _controller =PageController();
                           fontFamily: 'Gilroy',
                           fontSize: 33,), )]),
                     ),
-                    const Text('Get your deliveries intact and right on time, all from the comfort of your mobile phone.', 
+                    const Text('Get your deliveries intact and right \non time, all from the comfort of \nyour mobile phone.', 
                     style: TextStyle(color: Color.fromARGB(255, 67, 65, 73), fontFamily: 'gilroy', fontSize: 15,
                     fontStyle: FontStyle.normal, fontWeight: FontWeight.w400),
 
@@ -108,7 +106,7 @@ PageController _controller =PageController();
                 height: 350,
                decoration: const BoxDecoration(
                   image: DecorationImage(
-                  image: AssetImage('assets/images/pics2.png'),
+                  image: AssetImage('assets/images/gif2.gif'),
                    fit: BoxFit.contain )),
                    ),
                    Container(
@@ -119,7 +117,7 @@ PageController _controller =PageController();
                         Text('Track your parcel',  style: TextStyle(color: Colors.black, fontFamily: 'gilroy', fontSize: 33,
                     fontStyle: FontStyle.normal, fontWeight: FontWeight.w700),
                      textAlign: TextAlign.center,),
-                        Text('Tracking your parcel just got easier, no long talks or driver’s stress. Enter your tracking digits and be in charge.',
+                        Text('Tracking your parcel just got easier, no long talks \nor driver’s stress. Enter your tracking digits and \nbe in charge.',
                          style: TextStyle(color: Color.fromARGB(255, 67, 65, 73), fontFamily: 'gilroy', fontSize: 15,
                     fontStyle: FontStyle.normal, fontWeight: FontWeight.w400),
                      textAlign: TextAlign.center, )
@@ -149,7 +147,7 @@ PageController _controller =PageController();
                         Text('Lets get started',  style: TextStyle(color: Colors.black, fontFamily: 'gilroy', fontSize: 33,
                     fontStyle: FontStyle.normal, fontWeight: FontWeight.w700),
                      textAlign: TextAlign.center,),
-                        Text('Our services are quick and efficient. Delcity Logistics got you everytime.',
+                        Text('Our services are quick and efficient. \nDelcity Logistics got you everytime.',
                          style: TextStyle(color: Color.fromARGB(255, 67, 65, 73), fontFamily: 'gilroy', fontSize: 15,
                     fontStyle: FontStyle.normal, fontWeight: FontWeight.w400),
                      textAlign: TextAlign.center, )

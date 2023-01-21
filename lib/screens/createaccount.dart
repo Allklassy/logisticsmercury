@@ -1,7 +1,11 @@
-import 'dart:math';
 
+
+// ignore: unused_import
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:logisticsapp/screens/get_started.dart';
 import 'package:logisticsapp/screens/login.dart';
+import 'package:logisticsapp/screens/otp.dart';
 import 'package:logisticsapp/utencil.dart';
 
 class CreateAccount extends StatefulWidget {
@@ -29,6 +33,7 @@ class _CreateAccountState extends State<CreateAccount> {
     super.initState();
     
     @override
+    // ignore: unused_element
     void dispose(){
       _email.dispose();
       _confirmpassword.dispose();
@@ -41,18 +46,31 @@ class _CreateAccountState extends State<CreateAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children:  [
-          SizedBox(height: 50),
-         Center(child: Text('Create Account', style: heading,)),
-        Text('Create Account', style: textstylesmall,),
-        SizedBox(height: 50,),
-
-        SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column( crossAxisAlignment: CrossAxisAlignment.start,
+       appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+         leading: IconButton( icon: const Icon(Icons.arrow_back, color:Colors.black ),
+              onPressed: (() {Navigator.push(context, 
+                     MaterialPageRoute(builder: (context) => const Getstartedscreen()));
+             }
+           ),
+            )
+      ),extendBodyBehindAppBar: true,
+      body: SingleChildScrollView(physics: const AlwaysScrollableScrollPhysics(),
+            padding: const EdgeInsets.symmetric(
+             horizontal: 20,
+             vertical: 40 
+            ),
+        child: Column(
+          children:  [
+            const SizedBox(height: 50),
+           const Center(child: Text('Create Account', style: heading,)),
+          const Text('Kindly fill out your details correctly', style: textstylesmall,),
+          const SizedBox(height: 80,),
+      
+          Column( crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Email Address', style:textstylebold ,),
+              const Text('Email Address', style:textstylebold ,),
                               TextFormField(
                               controller: _name,
                               keyboardType: TextInputType.emailAddress,
@@ -69,7 +87,7 @@ class _CreateAccountState extends State<CreateAccount> {
                                 
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                               
                             ),const Text('phone Number', style:textstylebold ,),
@@ -89,7 +107,7 @@ class _CreateAccountState extends State<CreateAccount> {
                                 
                               ),
                             ),
-                              SizedBox(
+                              const SizedBox(
                               height: 20,
                               
                             ),const Text('Email ', style:textstylebold ,),
@@ -113,8 +131,8 @@ class _CreateAccountState extends State<CreateAccount> {
                               height: 20,
                               
                             ),const SizedBox(height: 20,),
-                            Text('Password', style: textstylebold,),
-
+                            const Text('Password', style: textstylebold,),
+      
                             TextFormField(
                               controller: _password,
                               keyboardType: TextInputType.visiblePassword,
@@ -143,8 +161,8 @@ class _CreateAccountState extends State<CreateAccount> {
                               obscureText: true,
                             ),
                             const SizedBox(height: 20,),
-                            Text('confirm password', style: textstylebold,),
-
+                            const Text('confirm password', style: textstylebold,),
+      
                             TextFormField(
                               controller: _password,
                               keyboardType: TextInputType.visiblePassword,
@@ -175,9 +193,10 @@ class _CreateAccountState extends State<CreateAccount> {
                             const SizedBox(height: 20,),
                             Center(
                               child: RichText( textAlign: TextAlign.center, text: const TextSpan(text: 
-                              'By creating an account i aggree to the',
+                              'By creating an account i agree to the',
                               style: textstylesmall,
                               children:[
+                                
                                 TextSpan(
                                   text: 'terms and\n condition', style: redtext,
                                   
@@ -185,7 +204,7 @@ class _CreateAccountState extends State<CreateAccount> {
                               ] ),
                            ),
                             ),
-                            SizedBox(height: 20,),
+                            const SizedBox(height: 20,),
                              Center(
                                child: ElevatedButton(
                   style: ElevatedButton.styleFrom(backgroundColor:const Color.fromARGB(255, 255, 47, 40),
@@ -193,8 +212,8 @@ class _CreateAccountState extends State<CreateAccount> {
                     borderRadius: BorderRadius.circular(5)
                   ),
                    minimumSize: const Size(320, 50)), onPressed: (() {Navigator.push(context, 
-                   MaterialPageRoute(builder: (context) => LoginPage()));
-                   }), child: const Text('Login', style: whitetextbox,)),
+                   MaterialPageRoute(builder: (context) => const Otpverification()));
+                   }), child: const Text('Create Account', style: whitetextbox,)),
                              ),
                               const SizedBox(height: 20,),
                             Center(
@@ -204,49 +223,22 @@ class _CreateAccountState extends State<CreateAccount> {
                               children:[
                                 TextSpan(
                                   text: 'Register', style: redtext,
-                                  
+                                  // recognizer: TapGestureRecognizer()onTap =(() {
+                                    
+                                  // })
                                 ), 
                               ] ),
                            ),
                             ),
-
+      
             
-          ],),
-        )
-        
-        ], 
+          ],)
+          
+          ], 
+        ),
       ),
     
     );
-    // Column(
-    //   children: [
-        
-    //     Container(
-    //       height: 20, child: Center(child: Text('Create Account', style: heading,),),
-        
-    //     ),
-    //   ],
-    // )
-    // ;
-    // //  Scaffold(
-    //   appBar: AppBar(
-    //     backgroundColor: Colors.transparent,
-    //     elevation: 0,
-    //      leading: IconButton( icon: const Icon(Icons.arrow_back, color:Color.fromARGB(255, 0, 0, 0) ),
-    //           onPressed: (() {Navigator.push(context, 
-    //                  MaterialPageRoute(builder: (context) => const CreateAccount()));
-    //          }
-    //        ),
-    //         )
-    //   ),extendBodyBehindAppBar: true,
-    //   body: Column(
-    //     children: [
-    //       Container(
-    //         width: double.infinity,
-    //         
-    //       ),
-    //     ],
-    //   ),
-    // );
+    
   }
 }

@@ -6,7 +6,7 @@ class Termofuse extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Term of use'),
+        title: const Text('Term of use'),
         centerTitle: true,
       ),
     );
